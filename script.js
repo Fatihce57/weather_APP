@@ -1,4 +1,4 @@
-const url = "http://api.openweathermap.org/data/2.5/weather?"           // 1) https://openweathermap.org/current
+const url = "https://api.openweathermap.org/data/2.5/weather?"           // 1) https://openweathermap.org/current
 const key = "83ca624c0e1dd6a16e948384b65009bb"                          // 2) yukaridaki sayfadan my app key den kendimizde key no olusrabiliriz
 
 const setQuery = (e) => {                                               // 5) e(event) üzerinden keyCode u arastiragiz, eger keyCode 13 e esit ise entera basma islemi gerceklesmis demektir.
