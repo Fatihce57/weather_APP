@@ -7,7 +7,7 @@
 body {
   font-family: 'montserrat', sans-serif;
   color: #fff;
-  background-image: url('weather.jpg');
+  background-image: url('./picture/weather.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
