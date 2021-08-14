@@ -2,7 +2,7 @@ const url = "https://api.openweathermap.org/data/2.5/weather?"           // 1) h
 const key = "83ca624c0e1dd6a16e948384b65009bb"                          // 2) yukaridaki sayfadan my app key den kendimizde key no olusrabiliriz
 
 const setQuery = (e) => {                                               // 5) e(event) üzerinden keyCode u arastiragiz, eger keyCode 13 e esit ise entera basma islemi gerceklesmis demektir.
-    if (e.keyCode == "13")
+    if (e.keyCode == "13")                                              // "13" ist key code für enter key
         getResult(searchBar.value)                                      // 6) getResult fonksiyonunu sehir ismi ile cagirmak icin searchBar.value ile degeri gönderiyoruz
 }
 
@@ -27,6 +27,14 @@ const displayResult = (result) => {                                         // 1
 
     let minmax = document.querySelector(".minmax")
     minmax.innerText = `Min: ${Math.round(result.main.temp_min)} °C | Max: ${Math.round(result.main.temp_max)} °C`
+}
+
+
+const bgImg =()=>{
+if (result.weather==rain){
+
+return document.body.style.backgroundImage = "url('../picture/foggy.jpg')";
+}
 }
 
 const searchBar = document.getElementById("searchBar")                   // 3) istek input degerinden gelen sehir ismi ile olusturuluyor. Ondan dolayi ilk olarak sehiri yakaliyoruz. getElementById ile searchBari yakaliyoruz.
