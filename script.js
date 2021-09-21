@@ -29,13 +29,5 @@ const displayResult = (result) => {
     minmax.innerText = `Min: ${Math.round(result.main.temp_min)} °C | Max: ${Math.round(result.main.temp_max)} °C`
 }
 
-
-// const bgImg = () => {
-//     if (result.weather == "Klarer Himmel") {
-
-//         return document.body.style.backgroundImage = "url('./picture/foggy.jpg')";
-//     }
-// }
-
-const searchBar = document.getElementById("searchBar")                   // 3) istek input degerinden gelen sehir ismi ile olusturuluyor. Ondan dolayi ilk olarak sehiri yakaliyoruz. getElementById ile searchBari yakaliyoruz.
-searchBar.addEventListener("keypress", setQuery)                        // 4) searchBar etiketinden gelen islemleri yapabilmek icin addEventListener ile dinleme islemi yapiyoruz. enter tusuna basilinca sehiri yakalamak istiyoruz. setQuery isimli fonksiyon tanimliyoruz.
+const searchBar = document.getElementById("searchBar")                   
+searchBar.addEventListener("keypress", setQuery)                        
