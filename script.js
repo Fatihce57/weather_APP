@@ -1,33 +1,33 @@
-const url = "https://api.openweathermap.org/data/2.5/weather?"           
-var key = config.SECRET_API_KEY;                                         
+const url = "https://api.openweathermap.org/data/2.5/weather?"
+var key = config.SECRET_API_KEY;
 
-const setQuery = (e) => {                                               
-    if (e.keyCode == "13")                                              
-        getResult(searchBar.value)                                      
+const setQuery = (e) => {
+    if (e.keyCode == "13")
+        getResult(searchBar.value)
 }
 
-const getResult = (cityName) => {                                            
-    let query = `${url}q=${cityName}&appid=${key}&units=metric&lang=de`     
-    fetch(query)                                                             
-        .then(weather => {                                                   
-            return weather.json()                                            
+const getResult = (cityName) => {
+    let query = `${url}q=${cityName}&appid=${key}&units=metric&lang=de`
+    fetch(query)
+        .then(weather => {
+            return weather.json()
         })
-        .then(displayResult)                                                
+        .then(displayResult)
 }
 
-const displayResult = (result) => {                                         
-    let city = document.querySelector(".city")                              
-    city.innerText = `${result.name}, ${result.sys.country}`                
+const displayResult = (result) => {
+    let city = document.querySelector(".city")
+    city.innerText = `${result.name}, ${result.sys.country}`
 
     let temp = document.querySelector(".temp")
-    temp.innerText = `${Math.round(result.main.temp)} °C`                   
+    temp.innerText = `${Math.round(result.main.temp)} °C`
 
     let desc = document.querySelector(".desc")
-    desc.innerText = result.weather[0].description                          
+    desc.innerText = result.weather[0].description
 
     let minmax = document.querySelector(".minmax")
     minmax.innerText = `Min: ${Math.round(result.main.temp_min)} °C | Max: ${Math.round(result.main.temp_max)} °C`
 }
 
-const searchBar = document.getElementById("searchBar")                   
-searchBar.addEventListener("keypress", setQuery)                        
+const searchBar = document.getElementById("searchBar")
+searchBar.addEventListener("keypress", setQuery)
